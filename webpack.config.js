@@ -40,6 +40,23 @@ module.exports = {
           }, 
           'less-loader'
         ],
+      },
+      // {
+      //   test: /\.(png|gif|jpg}jpeg)$/,
+      //   use: 'file-loader', // 字符串也可以
+      // },
+      {
+        test: /\.(woff|woff2|otf|eot|ttf)$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.(png|gif|svg|jpg|jpeg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10240,
+          }
+        }
       }
     ]
   },

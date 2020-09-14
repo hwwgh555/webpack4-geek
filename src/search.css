@@ -1,4 +1,10 @@
+@font-face{
+  font-family: 'zhulang';
+  src: url('../public/zhulang.otf')
+}
+
 .search-text{
+  font-family: 'zhulang';
   font-size: 30px;
   color: #f00;
 }
