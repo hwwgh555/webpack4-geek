@@ -10,7 +10,7 @@ class Search extends React.Component{
   render() {
     return <div className={['search-text', styles.border].join(' ')}>
       <img src={pic} />
-      Search Text--react;搜索文字
+      Search Text--react;搜索文字--hot webpack-dev-server
     </div>
   }
 }

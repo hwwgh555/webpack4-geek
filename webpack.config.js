@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { NamedModulesPlugin } = require('webpack')
+const { NamedModulesPlugin, HotModuleReplacementPlugin } = require('webpack')
 // 这里的引入与ES6是不同的
 
 // module从哪来的？
@@ -69,7 +69,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/react.html',
       filename: 'react.html'
-    })
+    }),
+    new HotModuleReplacementPlugin(),
   ],
-  mode: 'production'
+  mode: 'development',
+  devServer: { // 奇怪点：1.这里多加了一个属性，而不是写在plugins 2.启动命令是package.json添加webpack-dev-server
+    contentBase: './dist',
+    hot: true,
+  }
 }
